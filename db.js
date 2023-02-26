@@ -5,7 +5,7 @@ const sequelize = new Sequelize(
     process.env.PASS,
     {
         host: "localhost",
-        dialect: "postgres",
+        dialect: "postgres", //need to decide between MySQL and PG for DB
     }
 );
 
