@@ -1,24 +1,24 @@
-const sequelize = require("../db");
+const Sequelize = require('sequelize');
 
-module.exports = (sequelize, DataTypes) => {
-  const User = sequelize.define("user", {
-    firstName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    lastName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-    },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-  });
-  return User;
-};
+const sequelize = require('../db');
+//const sequelize = new Sequelize(something here); and then all the Sequelize can be defined by 'Sequelize' again.
+
+const User = sequelize.define('user', {
+  firstName: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  lastName: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  email: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    unique: true,
+  },
+  password: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+});
