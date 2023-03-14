@@ -1,6 +1,6 @@
-const Sequelize = require('sequelize');
+import Sequelize = require('sequelize');
 
-const sequelize = require('../db');
+import sequelize from '../util/db';
 //const sequelize = new Sequelize(something here); and then all the datatypes can be defined by 'DataTypes' again. 
 
 const Movie = sequelize.define('movie', {
