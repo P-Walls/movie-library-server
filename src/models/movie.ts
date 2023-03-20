@@ -1,9 +1,9 @@
-import Sequelize = require('sequelize');
+import * as sequelize from 'sequelize';
 
-import sequelize from '../util/db';
+import db from '../util/db';
 //const sequelize = new Sequelize(something here); and then all the datatypes can be defined by 'DataTypes' again. 
 
-const Movie = sequelize.define('movie', {
+const Movie = db.define('movie', {
   title: {
     type: Sequelize.STRING,
     allowNull: false,

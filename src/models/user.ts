@@ -1,9 +1,9 @@
-import Sequelize = require('sequelize');
+import * as sequelize from 'sequelize';
 
-import sequelize from '../util/db';
+import db from '../util/db';
 //const sequelize = new Sequelize(something here); and then all the Sequelize can be defined by 'Sequelize' again.
 
-const User = sequelize.define('user', {
+const User = db.define('user', {
   firstName: {
     type: Sequelize.STRING,
     allowNull: false,
