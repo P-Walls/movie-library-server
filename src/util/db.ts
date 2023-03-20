@@ -1,11 +1,15 @@
-import Sequelize from 'sequelize';
+import * as sequelize from 'sequelize';
 
-const sequelize = new Sequelize('media-library', 'postgres', process.env.PASS, {
-  host: 'localhost',
-  dialect: 'postgres', //need to decide between MySQL and PG for DB
-});
+const db = new sequelize.Sequelize({
+    database: 'media-library',
+    dialect: 'postgres',
+    username: 'postgres',
+    password: process.env.PASS,
+    host: 'localhost',
+  });
+  
 
-sequelize.authenticate().then(
+db.authenticate().then(
   function () {
     console.log('Connected to media-library postgres database');
   },
@@ -14,4 +18,4 @@ sequelize.authenticate().then(
   }
 );
 
-export default sequelize;
+export default db;
