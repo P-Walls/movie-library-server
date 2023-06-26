@@ -1,39 +1,39 @@
 import * as sequelize from 'sequelize';
 
-import db from '../util/db';
-//const sequelize = new Sequelize(something here); and then all the datatypes can be defined by 'DataTypes' again. 
+import db from '../config/database.config';
+//const sequelize = new Sequelize(something here); and then all the datatypes can be defined by 'DataTypes' again.
 
 const Movie = db.define('movie', {
   title: {
-    type: Sequelize.STRING,
+    type: sequelize.STRING,
     allowNull: false,
   },
   releaseDate: {
-    type: Sequelize.DATEONLY,
+    type: sequelize.DATEONLY,
     allowNull: false,
   },
   director: {
-    type: Sequelize.STRING,
+    type: sequelize.STRING,
     allowNull: false,
   },
   runtime: {
-    type: Sequelize.INTEGER,
+    type: sequelize.INTEGER,
   },
   rating: {
-    type: Sequelize.ENUM,
+    type: sequelize.ENUM,
     values: ['NR', 'G', 'PG', 'PG-13', 'R', 'Unrated', 'NC-17'],
   },
   budget: {
-    type: Sequelize.INTEGER,
+    type: sequelize.INTEGER,
   },
   // productionCompanies: {
 
   // },
   notes: {
-    type: Sequelize.STRING,
+    type: sequelize.STRING,
   },
   // userId: {
-  //   type: Sequelize.INTEGER,
+  //   type: sequelize.INTEGER,
   //   allowNull: false,
   // },
 });
