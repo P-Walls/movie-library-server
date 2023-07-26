@@ -1,4 +1,5 @@
 import * as sequelize from 'sequelize';
+import { Table, Model, Column, DataType } from 'sequelize-typescript';
 
 import db from '../config/database.config';
 //const sequelize = new Sequelize(something here); and then all the datatypes can be defined by 'DataTypes' again.
